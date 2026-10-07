@@ -9,21 +9,23 @@ mod  aaa {
 
  use tonic::{transport::Server, Request, Response, Status};
 
+// use crate::aaa::TestResponse1;
+
 pub struct MyOptionPractice {}
 
 #[tonic::async_trait]
 impl OptionalPractice for MyOptionPractice {
-    async fn select_enum(
+    async fn judge_hello(
         &self,
         request: Request<OptionalRequest>,
     ) -> Result<Response<OptionalResponse>, Status> {
         let server_comment =  ServerComment {
             comment: "声が小さい".to_string()
         };
-
+        println!("client");
         let response = OptionalResponse {
             point: Some(10 as i32),
-            comment: server_comment
+            comment: Some(server_comment)
         };
         Ok(Response::new(response))
     }

@@ -3,7 +3,7 @@ syntax = "proto3";
 package OptionalPractice;
 
 service OptionalPractice {
-	rpc selectEnum (OptionalRequest) returns (OptionalResponse);
+	rpc JudgeHello (OptionalRequest) returns (OptionalResponse);
 }
 
 message ServerComment {
