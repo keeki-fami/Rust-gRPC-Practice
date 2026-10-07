@@ -6,15 +6,15 @@ service OptionalPractice {
 	rpc selectEnum (OptionalRequest) returns (OptionalResponse);
 }
 
-message ClientComment {
+message ServerComment {
 	string comment = 1;
 }
 
 message OptionalRequest {
-	optional ClientComment comment = 1;
-	int32 point = 2;
+	string hello = 1;
 }
 
 message OptionalResponse {
-	string comment = 1;
+	ServerComment comment = 1;
+	optional int32 point = 2;
 }
